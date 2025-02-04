@@ -215,7 +215,7 @@ const AutoSlider = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
-    }, 500000); // Change slide every 5 seconds
+    }, 3000); // Change slide every 5 seconds
 
     return () => clearInterval(timer);
   }, []);
