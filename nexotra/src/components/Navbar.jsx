@@ -158,11 +158,11 @@ const NavLink = ({ to, children }) => {
   return (
     <Link to={to} onClick={handleClick} className="relative group">
       <motion.span
-        className={`text-gray-300 hover:text-white capitalize transition-colors ${
-          isActive ? "text-white" : ""
+        className={`text-gray-300 capitalize transition-all duration-500 ease-in-out hover:text-orange-700 hover:font-bold font-serif ${
+          isActive ? "text-green-600" : "text-blue-950"
         }`}
         whileHover={{ y: -2 }}
-        transition={{ type: "spring", stiffness: 300 }}
+        transition={{ type: "spring", stiffness: 9000 }}
       >
         {children}
       </motion.span>
@@ -202,19 +202,16 @@ export default function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={` w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" px-4 sm:px-6 lg:px-8 bg-white">
         <div className="flex items-center justify-between h-16">
           <NexotraLogo />
 
           {/* Desktop Menu */}
-          <div
-            
-            className="hidden md:flex space-x-8"
-          >
+          <div className="hidden md:flex space-x-8">
             {navItems.map((item) => (
               <NavLink key={item.path} to={item.path}>
                 {item.label}

@@ -17,7 +17,8 @@ import Dt from "./components/DigitalTransformationService";
 import FullstackService from "./components/FullstackService";
 import CloudService from "./components/CloudService";
 import CyberSecurityService from "./components/CyberSecurityService";
-import EnterpriseService from "./components/EnterpriseService";
+import MobileDevelopmentService from "./components/mobileDevelopmentService";
+import AiMachineLearning from "./components/AI&ML";
 
 // function App() {
 //   return (
@@ -52,9 +53,13 @@ import Navbar from "./components/Navbar";
 import About from "./components/About";
 import About1 from "./components/About1";
 import AutoSlider from "./components/AutoSlider";
+import OurStory from "./components/OurStory";
+// import servicesHere from "./components/servicesHere";
+import ServicesSection from "./components/ServicesSection";
+import WhyChooseUs from "./components/whyChooseUs";
+import Footer from "./components/footer";
 
 function App() {
-  
   return (
     <div className="min-h-screen bg-gray-100">
       <Navbar />
@@ -64,13 +69,18 @@ function App() {
           element={
             <div>
               <Home />
-              <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
+              {/* <div className="min-h-screen bg-gray-900 flex items-center justify-center p-4">
                 <AutoSlider />
-              </div>
+              </div> */}
+              <OurStory />
               <About />
+              <ServicesSection />
+              <WhyChooseUs />
+              {/* <servicesHere /> */}
               <Services />
-              <Technologies />
-              <Contact />
+              {/* <Technologies />
+              <Contact /> */}
+              <Footer />
             </div>
           }
         />
@@ -87,9 +97,10 @@ function App() {
         />
         <Route path="/services/cloud-integration" element={<CloudService />} />
         <Route
-          path="/services/enterprise-solutions"
-          element={<EnterpriseService />}
+          path="/services/mobile-development"
+          element={<MobileDevelopmentService />}
         />
+        <Route path="/services/AI&ML" element={<AiMachineLearning />} />
       </Routes>
     </div>
   );

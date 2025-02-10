@@ -61,7 +61,7 @@ export default function Home() {
         {[...Array(20)].map((_, i) => (
           <motion.div
             key={i}
-            className="absolute w-2 h-2 bg-blue-500/20 rounded-full"
+            className="absolute w-6 h-10 bg-blue-500/20 rounded-full"
             initial={{
               x: Math.random() * window.innerWidth,
               y: Math.random() * window.innerHeight,
@@ -119,48 +119,49 @@ export default function Home() {
 
         <motion.h1 variants={itemVariants} className="text-6xl font-bold mb-4">
           <span className="bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 text-transparent bg-clip-text">
-            Nexotra Technologies
+            Pioneering Next-Gen AI Technologies
           </span>
         </motion.h1>
 
-        <motion.p
-          variants={itemVariants}
-          className="text-xl text-gray-300 mb-8"
-        >
-          Transforming Ideas into Digital Reality
-        </motion.p>
+        <div className="flex justify-center  bg-gray-900 py-16 px-0.5">
+          <motion.p variants={itemVariants} className="text-xl text-gray-300 ">
+            We drive digital excellence by leveraging cutting-edge innovations
+            and accelerating revolutionary digital futures for future-ready
+            organizations.
+          </motion.p>
+        </div>
 
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="flex flex-wrap gap-6 justify-center mb-12"
-        >
-          <motion.div
+        > */}
+        {/* <motion.div
             variants={techBadgeVariants}
             whileHover="hover"
             className="flex items-center gap-2 bg-blue-500/10 px-4 py-2 rounded-full backdrop-blur-sm border border-blue-500/20"
           >
             <Server size={20} className="text-blue-400" />
             <span>Backend Development</span>
-          </motion.div>
-          <motion.div
+          </motion.div> */}
+        {/* <motion.div
             variants={techBadgeVariants}
             whileHover="hover"
             className="flex items-center gap-2 bg-purple-500/10 px-4 py-2 rounded-full backdrop-blur-sm border border-purple-500/20"
           >
             <Network size={20} className="text-purple-400" />
             <span>Frontend Development</span>
-          </motion.div>
-          <motion.div
+          </motion.div> */}
+        {/* <motion.div
             variants={techBadgeVariants}
             whileHover="hover"
             className="flex items-center gap-2 bg-green-500/10 px-4 py-2 rounded-full backdrop-blur-sm border border-green-500/20"
           >
             <Globe size={20} className="text-green-400" />
             <span>Web Applications</span>
-          </motion.div>
-        </motion.div>
+          </motion.div> */}
+        {/* </motion.div> */}
 
-        <motion.div
+        {/* <motion.div
           variants={itemVariants}
           className="flex gap-6 justify-center"
         >
@@ -192,7 +193,7 @@ export default function Home() {
           >
             <Mail size={24} />
           </motion.a>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
