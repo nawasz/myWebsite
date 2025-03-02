@@ -12,7 +12,7 @@ const ServiceCard = ({
   const navigate = useNavigate();
   return (
     <div
-      className="relative h-[400px] rounded-xl overflow-hidden group cursor-pointer transform transition-transform duration-300 hover:scale-105"
+      className="relative h-[500px]  rounded-xl overflow-hidden group cursor-pointer transform transition-transform duration-300 hover:scale-105"
       onClick={onClick}
       style={{
         backgroundImage: `url(${backgroundImage})`,
@@ -20,7 +20,7 @@ const ServiceCard = ({
         backgroundPosition: "center",
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent">
+      <div className="absolute inset-0 hover:bg-gradient-to-br from-pink-400 via-black to-pink-400 "> 
         <div className="absolute bottom-0 p-6 space-y-3">
           <h3 className="text-2xl font-bold text-white">{title}</h3>
           <p className="text-gray-200">{description}</p>

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { lazy, useRef } from "react";
 import { motion, useInView, useScroll, useTransform } from "framer-motion";
 import {
   Rocket,
@@ -10,7 +10,7 @@ import {
   Code,
   HeartHandshake,
 } from "lucide-react";
-
+import chooseUs from "../assets/ChooseUs.png";
 const WhyChooseUs = () => {
   const containerRef = useRef(null);
   const isInView = useInView(containerRef, { once: true, margin: "-100px" });
@@ -76,7 +76,7 @@ const WhyChooseUs = () => {
   };
 
   return (
-    <div className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-br from-gray-900 via-black to-gray-900">
+    <div className="relative min-h-screen py-20 overflow-hidden bg-gradient-to-br from-pink-400 via-black to-pink-400">
       {/* Animated Background */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1)_0%,rgba(0,0,0,0)_50%)]" />
@@ -97,6 +97,7 @@ const WhyChooseUs = () => {
               duration: Math.random() * 3 + 2,
               repeat: Infinity,
               ease: "easeInOut",
+              whileHover:lazy
             }}
           />
         ))}
@@ -109,7 +110,7 @@ const WhyChooseUs = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-6">
+          <h2 className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-600 mb-18">
             Why Choose Us?
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
@@ -130,7 +131,7 @@ const WhyChooseUs = () => {
           >
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80"
+                src={chooseUs}
                 alt="Innovation Hub"
                 className="w-full h-full object-cover"
               />

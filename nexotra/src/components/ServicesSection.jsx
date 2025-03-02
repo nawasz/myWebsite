@@ -80,20 +80,22 @@ const ServicesSection = () => {
   const visibleServices = services.slice(currentIndex, currentIndex + 3);
 
   return (
-    <div className="bg-gray-900 py-20">
-      <div className="container mx-auto px-4">
+    <div className="bg-gradient-to-br from-pink-400 via-black to-pink-400  h-[800px] p-6">
+      <div className="container mx-auto px-4 h-400">
         <div className="text-left pl-8 mb-16">
-          <p className="text-2xl font-bold text-white mb-4">Our Services</p>
-          <h2 className="text-4xl font-bold text-white">
+          <p className="text-2xl font-bold  text-purple-700 mb-4">
+            Our Services
+          </p>
+          <h2 className="text-4xl font-bold text-[#042dc4]">
             <span className="block mb-2">Achieve Business Excellence</span>
             <span className="block">With Our Services</span>
           </h2>
         </div>
 
         <div className="relative">
-          <div className="flex gap-6 pl-8">
+          <div className="flex gap-6 pl-8 ">
             {visibleServices.map((service) => (
-              <div key={service.id} className="flex-1">
+              <div key={service.id} className="flex-1 h-[1000px]">
                 <ServiceCard
                   title={service.title}
                   description={service.description}
@@ -107,13 +109,15 @@ const ServicesSection = () => {
 
           <button
             onClick={prevSlide}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors"
+            className="absolute left-5 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full text-blue-600 transition-all duration-300 hover:scale-110 hover:shadow-lg z-10"
+            aria-label="Previous slide"
           >
             <ChevronLeft size={24} />
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 bg-white/10 hover:bg-white/20 p-3 rounded-full text-white transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-3 rounded-full text-blue-600 transition-all duration-300 hover:scale-110 hover:shadow-lg z-10"
+            aria-label="Next slide"
           >
             <ChevronRight size={24} />
           </button>

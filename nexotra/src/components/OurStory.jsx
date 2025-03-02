@@ -28,7 +28,7 @@ const OurStory = () => {
         <motion.img
           src={myStoryImage}
           alt="Our Story Background"
-          className="w-full h-full object-cover transform origin-center"
+          className="w-full h-full object-cover transform origin-center "
           initial={{ scale: 1.1 }} // Slightly larger initial scale to prevent white edges during animation
           whileHover={{ scale: 1.15 }}
           transition={{ duration: 0.4, ease: "easeOut" }}
@@ -44,7 +44,7 @@ const OurStory = () => {
         <div className="text-center text-white max-w-2xl">
           {/* Title Animation */}
           <motion.h1
-            className="text-5xl md:text-6xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300"
+            className="text-5xl md:text-6xl font-bold m-4 p-9 bg-clip-text text-transparent bg-gradient-to-br from-pink-600  via-black to-bg-purple-900 "
             variants={textVariants}
             initial="hidden"
             whileInView="visible"

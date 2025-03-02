@@ -24,7 +24,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${bgImage})` }}
       >
-        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/60 to-black/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-red via-black/60 to-black/30" />
       </div>
 
       {/* Content */}

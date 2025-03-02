@@ -10,7 +10,7 @@ const Footer = () => {
           <h4 className="font-bold mb-4">Company</h4>
           <ul className="space-y-2">
             <li>
-              <Link to="/about" className="hover:text-gray-300">
+              <Link to="/company" className="hover:text-gray-300">
                 About Us
               </Link>
             </li>{" "}

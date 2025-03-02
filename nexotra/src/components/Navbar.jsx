@@ -1,270 +1,297 @@
-import React, { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import {
+  ChevronDown,
+  ChevronUp,
+  Building2,
+  Code,
+  Users,
+  Megaphone,
+  BookOpen,
+  Newspaper,
+  FileText,
+} from "lucide-react";
 
-const NexotraLogo = () => {
-  return (
-    <Link to="/">
-      <motion.div
-        className="flex items-center"
-        whileHover={{ scale: 1.05 }}
-        transition={{ type: "spring", stiffness: 300 }}
-      >
-        <div className="relative w-8 h-8">
-          {/* Core hexagon */}
-          <motion.div
-            className="absolute inset-0"
-            style={{
-              clipPath:
-                "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)",
-              background: "linear-gradient(45deg, #3b82f6, #8b5cf6)",
-            }}
-            animate={{
-              rotate: [0, 360],
-            }}
-            transition={{
-              duration: 20,
-              repeat: Infinity,
-              ease: "linear",
-            }}
-          />
+const serviceContents = {
+  IT: {
+    title: "Information Technology",
+    icon: <Code className="h-4 w-4" />,
+    subServices: {
+      "Business Consulting": {
+        title: "Business IT Consulting",
+        description:
+          "Strategic IT consulting to align technology with your business goals. Our expert consultants help optimize your IT infrastructure, improve operational efficiency, and drive digital transformation initiatives that deliver measurable business value.",
+        knowmoreLink: "/services/full-stack",
+      },
+      "AI Implementation": {
+        title: "AI & Machine Learning Solutions",
+        description:
+          "Cutting-edge artificial intelligence solutions to transform your business. From predictive analytics to natural language processing, we help implement AI technologies that automate processes, enhance decision-making, and create competitive advantages.",
+        knowmoreLink: "/services/AI&ML ",
+      },
+      "Support Services": {
+        title: "24/7 IT Support Services",
+        description:
+          "Comprehensive IT support to keep your business running smoothly. Our dedicated team provides round-the-clock assistance, proactive monitoring, and rapid issue resolution to minimize downtime and maximize productivity.",
+        knowmoreLink: "/services/full-stack",
+      },
+      "App Development": {
+        title: "Custom Application Development",
+        description:
+          "End-to-end application development services tailored to your needs. We build scalable, secure, and innovative applications using the latest technologies and best practices to help you achieve your business objectives.",
+        knowmoreLink: "/services/full-stack",
+      },
+    },
+  },
+  TalentAcquisition: {
+    title: "Talent Acquisition",
+    icon: <Users className="h-4 w-4" />,
+    subServices: {
+      "Technical Recruitment": {
+        title: "Technical Talent Recruitment",
+        description:
+          "Specialized recruitment services for technical roles. Our expert recruiters identify and attract top tech talent, ensuring the perfect match for your organization's technical needs and culture.",
+        knowmoreLink: "/services/full-stack",
+      },
+      "Executive Search": {
+        title: "Executive Leadership Search",
+        description:
+          "Strategic executive search services to find your next leadership team. We identify and evaluate top-tier executives who can drive your organization's vision and growth.",
+        knowmoreLink: "/services/full-stack",
+      },
+      "Workforce Solutions": {
+        title: "Comprehensive Workforce Solutions",
+        description:
+          "End-to-end workforce management solutions. From temporary staffing to permanent placement, we provide flexible solutions to meet your dynamic workforce needs.",
+        knowmoreLink: "/services/full-stack",
+      },
+      "Talent Assessment": {
+        title: "Advanced Talent Assessment",
+        description:
+          "Comprehensive talent assessment and evaluation services. Our proven assessment methodologies help identify the best candidates who will thrive in your organization.",
+        knowmoreLink: "/services/full-stack",
+      },
+    },
+  },
+  DigitalMarketing: {
+    title: "Digital Marketing",
+    icon: <Megaphone className="h-4 w-4" />,
+    subServices: {
+      "Digital Strategy": {
+        title: "Digital Marketing Strategy",
+        description:
+          "Comprehensive digital marketing strategies tailored to your business goals. We develop data-driven approaches to enhance your online presence and drive measurable results.",
+        knowmoreLink: "/services/full-stack",
+      },
+      "Content Marketing": {
+        title: "Content Marketing Services",
+        description:
+          "Strategic content creation and distribution to engage your target audience. Our content experts create compelling narratives that build brand authority and drive conversions.",
+        knowmoreLink: "/services/full-stack",
+      },
+      "Social Media": {
+        title: "Social Media Marketing",
+        description:
+          "Full-service social media marketing to build and engage your community. We manage your social presence across platforms to increase brand awareness and drive meaningful engagement.",
+        knowmoreLink: "/services/full-stack",
+      },
+      Analytics: {
+        title: "Marketing Analytics & Insights",
+        description:
+          "Advanced analytics and reporting to measure marketing performance. We provide actionable insights to optimize your campaigns and maximize ROI.",
+        knowmoreLink: "/services/full-stack",
+      },
+    },
+  },
+};
 
-          {/* Orbital rings */}
-          {[...Array(3)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute inset-0"
-              style={{
-                border: "2px solid",
-                borderColor: `rgba(59, 130, 246, ${0.3 - i * 0.1})`,
-                borderRadius: "50%",
-                transform: `scale(${1.2 + i * 0.2})`,
-              }}
-              animate={{
-                rotate: [0, 360],
-                scale: [1.2 + i * 0.2, 1.3 + i * 0.2, 1.2 + i * 0.2],
-              }}
-              transition={{
-                rotate: {
-                  duration: 10 + i * 5,
-                  repeat: Infinity,
-                  ease: "linear",
-                },
-                scale: {
-                  duration: 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                },
-              }}
-            />
-          ))}
-
-          {/* Inner geometric patterns */}
-          <motion.div
-            className="absolute inset-2"
-            style={{
-              clipPath: "polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)",
-              background: "linear-gradient(135deg, #60a5fa, #7c3aed)",
-            }}
-            animate={{
-              rotate: [0, -360],
-              scale: [0.8, 1, 0.8],
-            }}
-            transition={{
-              rotate: {
-                duration: 15,
-                repeat: Infinity,
-                ease: "linear",
-              },
-              scale: {
-                duration: 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              },
-            }}
-          />
-
-          {/* Pulsing core */}
-          <motion.div
-            className="absolute inset-3"
-            style={{
-              background: "radial-gradient(circle, #93c5fd, #3b82f6)",
-              borderRadius: "50%",
-            }}
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.8, 0.3, 0.8],
-            }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        </div>
-
-        {/* Company name with gradient effect */}
-        <div className="ml-3">
-          <motion.div
-            className="font-bold text-xl"
-            animate={{
-              background: [
-                "linear-gradient(45deg, #3b82f6, #8b5cf6)",
-                "linear-gradient(225deg, #3b82f6, #8b5cf6)",
-                "linear-gradient(45deg, #3b82f6, #8b5cf6)",
-              ],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            style={{
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Nexotra
-          </motion.div>
-        </div>
-      </motion.div>
-    </Link>
+const NavBar = () => {
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isInsightsOpen, setIsInsightsOpen] = useState(false);
+  const [activeService, setActiveService] = useState("IT");
+  const [activeSubService, setActiveSubService] = useState(
+    "Business Consulting"
   );
-};
-
-const scrollToTopAndNavigate = (navigate, to) => {
-  // First, smooth scroll to top
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth",
-  });
-
-  // Wait for the scroll animation to complete (approximately)
-  setTimeout(() => {
-    navigate(to);
-  }, 500); // Adjust timing if needed
-};
-const NavLink = ({ to, children }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
-  const isActive = location.pathname === to;
-
-  const handleClick = (e) => {
-    e.preventDefault();
-    scrollToTopAndNavigate(navigate, to);
-  };
 
   return (
-    <Link to={to} onClick={handleClick} className="relative group">
-      <motion.span
-        className={`text-gray-300 capitalize transition-all duration-500 ease-in-out hover:text-orange-700 hover:font-bold font-serif ${
-          isActive ? "text-green-600" : "text-blue-950"
-        }`}
-        whileHover={{ y: -2 }}
-        transition={{ type: "spring", stiffness: 9000 }}
-      >
-        {children}
-      </motion.span>
-      {isActive && (
-        <motion.div
-          className="absolute -bottom-1 left-0 right-0 h-0.5 bg-blue-500"
-          layoutId="underline"
-        />
-      )}
-    </Link>
-  );
-};
-
-export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const navItems = [
-    { path: "/", label: "home" },
-    { path: "/about", label: "about" },
-    { path: "/services", label: "services" },
-    { path: "/technologies", label: "technologies" },
-    { path: "/contact", label: "contact" },
-  ];
-
-  return (
-    <motion.nav
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      className={` w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-black/80 backdrop-blur-md" : "bg-transparent"
-      }`}
-    >
-      <div className=" px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="flex items-center justify-between h-16">
-          <NexotraLogo />
-
-          {/* Desktop Menu */}
-          <div className="hidden md:flex space-x-8">
-            {navItems.map((item) => (
-              <NavLink key={item.path} to={item.path}>
-                {item.label}
-              </NavLink>
-            ))}
+    <nav className="bg-gradient-to-br from-pink-300 via-black  to-pink-400  shadow-lg fixed w-full top-0 z-50">
+      <div className="max-w-7xl mx-auto px-4">
+        <div className="flex justify-between h-16">
+          <div className="flex items-center">
+            <Building2 className="h-8 w-8 text-blue-600" />
+            <span className="ml-2 text-xl font-bold text-gray-800">
+              TechCorp
+            </span>
           </div>
+          <div className="flex items-center space-x-8">
+            <a
+              href="/company"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              Company
+            </a>
 
-          {/* Mobile Menu Button */}
-          <motion.button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-300 hover:text-white"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </motion.button>
+            <div className="relative">
+              <button
+                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors text-xl  "
+                onMouseEnter={() => setIsServicesOpen(true)}
+                onClick={() => setIsServicesOpen(!isServicesOpen)}
+              >
+                Services
+                {isServicesOpen ? (
+                  <ChevronUp className="ml-1 h-4 w-4" />
+                ) : (
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                )}
+              </button>
+              {isServicesOpen && (
+                <div
+                  className="fixed left-0 w-full bg-red-200 shadow-xl border-t border-gray-100 "
+                  style={{ top: "64px" }}
+                  onMouseLeave={() => setIsServicesOpen(false)}
+                >
+                  <div className="max-w-7xl mx-auto">
+                    <div className="flex">
+                      <div className="w-1/4 bg-red-200 py-6 px-4 text-base font-bold font-serif ">
+                        {Object.entries(serviceContents).map(
+                          ([key, service]) => (
+                            <button
+                              key={key}
+                              className={`flex items-center w-full text-left px-4 py-3 font-bold font-serif rounded-lg mb-2 ${
+                                activeService === key
+                                  ? "bg-blue-50 text-blue-600"
+                                  : "text-gray-600 hover:bg-gray-100"
+                              }`}
+                              onMouseEnter={() => {
+                                setActiveService(key);
+                                setActiveSubService(
+                                  Object.keys(service.subServices)[0]
+                                );
+                              }}
+                            >
+                              {service.icon}
+                              <span className="ml-2">{service.title}</span>
+                            </button>
+                          )
+                        )}
+                      </div>
+                      <div className="w-1/3 border-l border-r border-gray-100 py-6 px-6">
+                        <h3 className="text-sm font-semibold text-gray-400 mb-4 uppercase tracking-wider">
+                          Services
+                        </h3>
+                        <div className="space-y-2">
+                          {Object.entries(
+                            serviceContents[activeService].subServices
+                          ).map(([key, service]) => (
+                            <button
+                              key={key}
+                              className={`block w-full text-left px-4 py-2 rounded-lg ${
+                                activeSubService === key
+                                  ? "bg-blue-50 text-blue-600"
+                                  : "text-gray-600 hover:bg-gray-50"
+                              }`}
+                              onMouseEnter={() => setActiveSubService(key)}
+                            >
+                              {service.title}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="w-5/12 py-6 px-8">
+                        <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                          {
+                            serviceContents[activeService].subServices[
+                              activeSubService
+                            ].title
+                          }
+                        </h3>
+                        <p className="text-gray-600 leading-relaxed">
+                          {
+                            serviceContents[activeService].subServices[
+                              activeSubService
+                            ].description
+                          }
+                        </p>
+                        <a
+                          href={
+                            serviceContents[activeService].subServices[
+                              activeSubService
+                            ].knowmoreLink
+                          }
+                          className="inline-block mt-6 text-blue-600 hover:text-blue-700 font-medium"
+                        >
+                          Learn more →
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="/products"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              Products
+            </a>
+            <a
+              href="/careers"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              Careers
+            </a>
+
+            <div className="relative">
+              <button
+                className="flex items-center text-gray-600 hover:text-blue-600 transition-colors"
+                onMouseEnter={() => setIsInsightsOpen(true)}
+                onClick={() => setIsInsightsOpen(!isInsightsOpen)}
+              >
+                Insights
+                {isInsightsOpen ? (
+                  <ChevronUp className="ml-1 h-4 w-4" />
+                ) : (
+                  <ChevronDown className="ml-1 h-4 w-4" />
+                )}
+              </button>
+              {isInsightsOpen && (
+                <div
+                  className="absolute top-full right-0 w-48 bg-white shadow-lg rounded-lg py-2 mt-1"
+                  onMouseLeave={() => setIsInsightsOpen(false)}
+                >
+                  <a
+                    href="/blogs"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  >
+                    <BookOpen className="h-4 w-4 mr-2" /> Blogs
+                  </a>
+                  <a
+                    href="/news"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  >
+                    <Newspaper className="h-4 w-4 mr-2" /> News
+                  </a>
+                  <a
+                    href="/articles"
+                    className="flex items-center px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  >
+                    <FileText className="h-4 w-4 mr-2" /> Articles
+                  </a>
+                </div>
+              )}
+            </div>
+
+            <a
+              href="/contact"
+              className="text-gray-600 hover:text-blue-600 transition-colors"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.2 }}
-            className="md:hidden bg-black/95 backdrop-blur-md overflow-hidden"
-          >
-            <div className="px-2 pt-2 pb-3 space-y-1">
-              {navItems.map((item) => (
-                <motion.div
-                  key={item.path}
-                  whileHover={{ x: 10 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    to={item.path}
-                    className={`block w-full px-3 py-2 text-base font-medium rounded-md ${
-                      location.pathname === item.path
-                        ? "text-white bg-blue-500/20"
-                        : "text-gray-300 hover:text-white hover:bg-blue-500/10"
-                    }`}
-                    onClick={() => setIsMenuOpen(false)}
-                  >
-                    {item.label}
-                  </Link>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </motion.nav>
+    </nav>
   );
-}
+};
+
+export default NavBar;
