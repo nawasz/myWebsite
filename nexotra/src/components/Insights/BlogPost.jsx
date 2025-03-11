@@ -1,9 +1,7 @@
-import React from "react";
+
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { blogPosts } from "../../data/blogPosts";
-import ReactMarkdown from "react-markdown";
-import { Helmet } from "react-helmet";
 import img1 from "../../assets/blogs/Img_1.png";
 import img2 from "../../assets/blogs/Img_2.png";
 import img3 from "../../assets/blogs/Img_3.png";
@@ -39,7 +37,6 @@ const BlogPost = () => {
       </div>
     );
   }
-
   return (
     <div className="min-h-screenpy-12 px-4 sm:px-6 lg:px-8">
       <div
