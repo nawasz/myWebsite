@@ -4,18 +4,17 @@ import { ArrowLeft } from "lucide-react";
 import { blogPosts } from "../../data/blogPosts";
 import ReactMarkdown from "react-markdown";
 import { Helmet } from "react-helmet";
-//import img1 from "../assets/blogs/Img_1.png";
 import img1 from "../../assets/blogs/Img_1.png";
 import img2 from "../../assets/blogs/Img_2.png";
 import img3 from "../../assets/blogs/Img_3.png";
-import img4 from "/src/assets/blogs/Img_4.png";
+import img4 from "../../assets/blogs/Img_4.png";
 import img5 from "../../assets/blogs/Img_5.png";
 import Footer from "../footer";
 const imageMap = {
   1: img1,
   2: img2,
   3: img3,
-  4: <img src={img4} alt="Blog Image" />,
+  4: img4,
   5: img5,
 };
 
