@@ -1,8 +1,8 @@
 import img1 from "../assets/blogs/Img_1.png";
 import img2 from "../assets/blogs/Img_2.png";
 import img3 from "../assets/blogs/Img_3.png";
-import img4 from "../assets/blogs/Img_4.png";
-import img5 from "../assets/blogs/Img_5.png";
+import img4 from "../assets/blogs/Img_3.png";
+import img5 from "../assets/blogs/Img_3.png";
 
 export const blogPosts = [
   {
