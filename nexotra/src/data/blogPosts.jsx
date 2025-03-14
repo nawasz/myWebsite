@@ -1,8 +1,8 @@
-import img1 from "../assets/blogs/Img_1.png";
-import img2 from "../assets/blogs/Img_2.png";
-import img3 from "../assets/blogs/Img_3.png";
-import img4 from "../assets/blogs/Img_3.png";
-import img5 from "../assets/blogs/Img_3.png";
+// import img1 from "../assets/blogs/Img_1.png";
+// import img2 from "../assets/blogs/Img_2.png";
+// import img3 from "../assets/blogs/Img_3.png";
+// import img4 from "../assets/blogs/Img_3.png";
+// import img5 from "../assets/blogs/Img_3.png";
 
 export const blogPosts = [
   {
@@ -10,7 +10,7 @@ export const blogPosts = [
     title: "Streamlining Your Workflow: How IT Solutions Can Boost Efficiency",
     brief:
       "As the business environment grows more competitive, flexibility is crucial for organizations to meet customer needs. To..",
-    image: img1,
+    // image: img1,
     div1: {
       p1: "Streamlining Your Workflow: How IT Solutions Can Boost Efficiency",
       p2: `As the business environment grows more competitive, flexibility is crucial for organizations to meet customer needs.To increase
@@ -130,7 +130,7 @@ export const blogPosts = [
       "The Digital Transformation Journey: From Strategy to Implementation",
     brief:
       "Digital transformation is the new buzzword that has now become a strategic necessity for organizations wanting to survi...",
-    image: img2,
+    // image: img2,
     div1: {
       p1: "Streamlining Your Workflow: How IT Solutions Can Boost Efficiency",
       p2: `As the business environment grows more competitive, flexibility is crucial for organizations to meet customer needs.To increase
@@ -248,7 +248,7 @@ export const blogPosts = [
     title: "The Role Of IT In Driving Digital Transformation.",
     brief:
       "As the pace of technological change continues to accelerate, organizations must embrace digital transformation to remai... ",
-    image: img3,
+    // image: img3,
     div1: {
       p1: "Streamlining Your Workflow: How IT Solutions Can Boost Efficiency",
       p2: `As the business environment grows more competitive, flexibility is crucial for organizations to meet customer needs.To increase
@@ -367,7 +367,7 @@ export const blogPosts = [
       "How to Choose the Right Technology Solutions for Your Business Needs.",
     brief:
       "Choosing the right Information technology solutions for your business needs can be a daunting prospect. With the ever-e...",
-    image: img4,
+    // image: img4,
     div1: {
       p1: "Streamlining Your Workflow: How IT Solutions Can Boost Efficiency",
       p2: `As the business environment grows more competitive, flexibility is crucial for organizations to meet customer needs.To increase
@@ -485,7 +485,7 @@ export const blogPosts = [
     title: "Streamlining Your Business with IT Automation.",
     brief:
       "Today, businesses can automate specific functions to streamline processes. Thanks to new applications and cutting-edge ...",
-    image: img5,
+    // image: img5,
     div1: {
       p1: "Streamlining Your Workflow: How IT Solutions Can Boost Efficiency",
       p2: `As the business environment grows more competitive, flexibility is crucial for organizations to meet customer needs.To increase
