@@ -1,9 +1,9 @@
-import React from "react";
+// import React from "react";
 import { useParams, Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import { blogPosts } from "../../data/blogPosts";
-import ReactMarkdown from "react-markdown";
-import { Helmet } from "react-helmet";
+// import ReactMarkdown from "react-markdown";
+// import { Helmet } from "react-helmet";
 //import img1 from "../assets/blogs/Img_1.png";
 import img1 from "../../assets/blogs/Img_1.png";
 import img2 from "../../assets/blogs/Img_2.png";
